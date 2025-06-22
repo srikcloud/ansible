@@ -1,0 +1,12 @@
+- name: play level variables
+  hosts: local
+  connection: local
+  vars:
+    COURSE: Ansible # equal to COURSE=Ansible in shell, shell we refer $VAR or ${VAR}
+    DURATION: 10HR
+    TRAINER: Siva
+  tasks:
+  - name: print course information
+    ansible.builtin.debug:
+    #vars reference should be sourounded by ""
+      msg: " Hello {{ COURSE }}, course Duration: {{ DURATION }}, Trainer is {{ TRAINER }}"
