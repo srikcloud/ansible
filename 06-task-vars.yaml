@@ -13,3 +13,8 @@
     #vars reference should be sourounded by ""
       msg: " Hello {{ COURSE }}, course Duration: {{ DURATION }}, Trainer is {{ TRAINER }}"
   
+  - name: print course information again
+    ansible.builtin.debug:
+    #vars reference should be sourounded by ""
+      msg: " Hello {{ COURSE }}, course Duration: {{ DURATION }}, Trainer is {{ TRAINER }}"
+  
