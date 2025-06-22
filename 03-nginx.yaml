@@ -1,0 +1,15 @@
+- name: ngnix install and run
+  hosts: frontend
+  tasks:
+  - name: install nginx server
+    ansible.builtin.package:
+      name: nginx
+      state: present # means to install and absent means to remove or uninstall
+
+  - name: start nginx
+    ansible.builtin.service:
+      name: ngnix
+      state: started
+      enabled: yes
+
+      
