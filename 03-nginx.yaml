@@ -1,16 +1,14 @@
-- name: ngnix install and run
+- name: nginx install and run
   hosts: frontend
-  become: yes # to grant sudo access
+  become: yes # sudo access
   tasks:
   - name: install nginx server
     ansible.builtin.package:
       name: nginx
-      state: present # means to install and absent means to remove or uninstall
-
+      state: present
+  
   - name: start nginx
     ansible.builtin.service:
-      name: ngnix
+      name: nginx
       state: started
       enabled: yes
-
-
